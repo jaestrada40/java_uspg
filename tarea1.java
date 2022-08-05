@@ -24,26 +24,26 @@ public class tarea1 {
         System.out.println("5. Salir");
         System.out.println("Ingrese una opcion: ");
         int opcion = scanner.nextInt();
-        switch (opcion) {
-            case 1:
-                arregloAleatorio();
-                break;
-            case 2:
-                arregloAscendente();
-                break;
-            case 3:
-                arregloDescendente();
-                break;
-            case 4:
-                mostrarArreglo();
-                break;
-            case 5:
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Opcion no valida");
-                break;
-        }
+            switch (opcion) {
+                case 1:
+                    arregloAleatorio();
+                    break;
+                case 2:
+                    arregloAscendente();
+                    break;
+                case 3:
+                    arregloDescendente();
+                    break;
+                case 4:
+                    mostrarArreglo();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
         }
     }
 
