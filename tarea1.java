@@ -14,7 +14,7 @@ public class tarea1 {
 
     
     public static void menu() {
-
+        int[] arregloAleatorio = new int[10];
         Scanner scanner = new Scanner(System.in);
         while (true){
         System.out.println("1. Arreglo aleatorio");
@@ -26,13 +26,16 @@ public class tarea1 {
         int opcion = scanner.nextInt();
             switch (opcion) {
                 case 1:
-                    arregloAleatorio();
+                    arregloAleatorio =arregloAleatorio();
+                    imprimirArreglo(arregloAleatorio);
                     break;
                 case 2:
-                    arregloAscendente();
+                    arregloAscendente(arregloAleatorio);
+                    imprimirArreglo(arregloAleatorio);
                     break;
                 case 3:
-                    arregloDescendente();
+                    arregloDescendente(arregloAleatorio);
+                    imprimirArreglo(arregloAleatorio);
                     break;
                 case 4:
                     mostrarArreglo();
@@ -47,67 +50,56 @@ public class tarea1 {
         }
     }
 
-    public static void arregloAleatorio() {
-        System.out.println("==== Arreglo aleatorio ====");
+    public static int[] arregloAleatorio() {
+        System.out.println("==== Arreglo Aleatorio ====");
         int[] arregloAleatorio = new int[10];
         for (int i = 0; i < arregloAleatorio.length; i++) {
             arregloAleatorio[i] = (int) (Math.random() * 100);
         }
-        for (int i = 0; i < arregloAleatorio.length; i++) {
-            System.out.println(arregloAleatorio[i]);
+        return arregloAleatorio;
+    }
+
+
+    public static void imprimirArreglo(int[] arreglo) {
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.println(arreglo[i]);
         }
     }
 
-    public static void arregloAscendente() {
+     public static int[] arregloAscendente(int[] arreglo){
         System.out.println("==== Arreglo Ascendente ====");
-        int[] arregloAscendente = new int[10];
-        for (int i = 0; i < arregloAscendente.length; i++) {
-            arregloAscendente[i] = (int) (Math.random() * 100);
-        }
-        for (int i = 0; i < arregloAscendente.length; i++) {
-            for (int j = i + 1; j < arregloAscendente.length; j++) {
-                if (arregloAscendente[i] > arregloAscendente[j]) {
-                    int aux = arregloAscendente[i];
-                    arregloAscendente[i] = arregloAscendente[j];
-                    arregloAscendente[j] = aux;
+        for (int i = 0; i < arreglo.length; i++) {
+            for (int j = i + 1; j < arreglo.length; j++) {
+                if (arreglo[i] > arreglo[j]) {
+                    int aux = arreglo[i];
+                    arreglo[i] = arreglo[j];
+                    arreglo[j] = aux;
                 }
             }
         }
-        //mostrar array ascendente
-        for (int i = 0; i < arregloAscendente.length; i++) {
-            System.out.println(arregloAscendente[i]);
-        }
+        return arreglo;
     }
 
-    public static void arregloDescendente() {
+    public static int[] arregloDescendente(int[] arreglo) {
         System.out.println("==== Arreglo descendente ====");
-        int[] arregloDescendente = new int[10];
-        for (int i = 0; i < arregloDescendente.length; i++) {
-            arregloDescendente[i] = (int) (Math.random() * 100);
-        }
-        //descending
-        for (int i = 0; i < arregloDescendente.length; i++) {
-            for (int j = i + 1; j < arregloDescendente.length; j++) {
-                if (arregloDescendente[i] < arregloDescendente[j]) {
-                    int temp = arregloDescendente[i];
-                    arregloDescendente[i] = arregloDescendente[j];
-                    arregloDescendente[j] = temp;
+        for (int i = 0; i < arreglo.length; i++) {
+            for (int j = i + 1; j < arreglo.length; j++) {
+                if (arreglo[i] < arreglo[j]) {
+                    int temp = arreglo[i];
+                    arreglo[i] = arreglo[j];
+                    arreglo[j] = temp;
                 }
             }
         }
-        for (int i = 0; i < arregloDescendente.length; i++) {
-            System.out.println(arregloDescendente[i]);
-        }
+        return arreglo;
     }
 
-    public static void mostrarArreglo() {
-        System.out.println("==== Mostrar arreglo ====");
-        int[] arregloMostrar = new int[10];
-        for (int i = 0; i < arregloMostrar.length; i++) {
-            arregloMostrar[i] = (int) (Math.random() * 100);
+    public static int[] mostrarArreglo() {
+        System.out.println("==== Arreglo Aleatorio ====");
+        int[] arregloAleatorio = new int[10];
+        for (int i = 0; i < arregloAleatorio.length; i++) {
+            arregloAleatorio[i] = (int) (Math.random() * 100);
         }
-        for (int i = 0; i < arregloMostrar.length; i++) {
-            System.out.println(arregloMostrar[i]);
-        }
+        return arregloAleatorio;
     }
 }
