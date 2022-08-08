@@ -39,6 +39,7 @@ public class tarea1 {
                     break;
                 case 4:
                     mostrarArreglo();
+                    imprimirArreglo(arregloAleatorio);
                     break;
                 case 5:
                     System.exit(0);
