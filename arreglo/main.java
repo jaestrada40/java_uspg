@@ -18,9 +18,9 @@ public class main {
         while (true){
         System.out.println("1. Buscar el menor numero");
         System.out.println("2. Contador de vocales");
-        System.out.println("3. Password");
+        System.out.println("3. Validar contraseña");
         System.out.println("4. Promedio");
-        System.out.println("5. Mayor y menor");
+        System.out.println("5. El Mayor y menor");
         System.out.println("6. Salir");
         System.out.println("Ingrese una opcion: ");
         int opcion = scanner.nextInt();
@@ -33,7 +33,7 @@ public class main {
                     ingresoTexto(arreglo);
                     break;
                 case 3:
-                    password();
+                    contraseña();
                     break;
                 case 4:
                     promedio();
@@ -99,22 +99,46 @@ public class main {
         return contador;
     }
 
-    //Metodo validar password letras y numeros y longitud de 8
-    public static void password() {
+    //Metodo para ingresar un password validación de que sea mayor a 8 caracteres y que no contenga espacios en blanco y que contenga por lo menos dos numeros y contenga letras mayusculas y minusculas
+    public static void contraseña() {
+        System.out.println("==== Validar contraseña ====");
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese un password:");
-        String password = sc.nextLine();
-        if (password.length() >= 8) {
-            if (password.matches("[a-zA-Z0-9]+")) {
-                System.out.println("Password valido");
-            } else {
-                System.out.println("Password invalido");
-            }
+        System.out.println("Ingrese una contraseña");
+        String contraseña = sc.nextLine();
+        if (contraseña.length() > 8 && !contraseña.contains(" ") && contarvocales(contraseña) > 0 && contarNumeros(contraseña) > 1 && mayusculas(contraseña)) {
+            System.out.println("Contraseña valida");
         } else {
-            System.out.println("Password invalido");
+            System.out.println("Contraseña invalida");
         }
     }
 
+    //Metodo para contar mayusculas
+    public static boolean mayusculas(String contraseña) {
+        int contador = 0;
+        for (int i = 0; i < contraseña.length(); i++) {
+            if (contraseña.charAt(i) >= 'A' && contraseña.charAt(i) <= 'Z') {
+                contador++;
+            }
+        }
+        if (contador > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Metodo para contar los numeros de un texto
+    public static int contarNumeros(String texto) {
+        int contador = 0;
+        for (int i = 0; i < texto.length(); i++) {
+            if (texto.charAt(i) >= '0' && texto.charAt(i) <= '9') {
+                contador++;
+            }
+        }
+        return contador;
+    }
+    
+  
     //Metodo imprimir promedio de arreglo de 10 numeros
     public static void promedio() {
         System.out.println("==== Promedio ====");        
@@ -126,6 +150,7 @@ public class main {
         System.out.println("El promedio es: " + promedio(array));
 
     }
+
     //Metodo para calcular el promedio de un arreglo
     public static int promedio(int[] array) {
         int suma = 0;
@@ -137,7 +162,7 @@ public class main {
 
     //Metodo arreglo de numeros aleatorios y encontrar el numero mayor y menor
     public static void mayorMenor() {
-        System.out.println("==== Mayor y Menor ====");
+        System.out.println("==== El numero mayor y menor ====");
         int array[] = new int[10];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 100);
