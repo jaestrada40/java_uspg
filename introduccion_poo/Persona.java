@@ -53,9 +53,7 @@ public class Persona {
 
     public void ingreseDatos(){
         Scanner entrada = new Scanner(System.in);
-        Scanner T=new Scanner(System.in);
         Persona personas[] = new Persona[2];
-        char op = 's';
         for (int i = 0; i < personas.length; i++){
             System.out.println("Ingrese nombre: ");
             nombre = entrada.nextLine();
@@ -67,10 +65,6 @@ public class Persona {
             nit = entrada.nextFloat();
             personas[i] = new Persona(nombre, apellido, dpi, nit);
             System.out.println(personas);
-            while (op == 's'){
-                System.out.println("Desea seguir s/n");
-                op = T.next().charAt(0);
-            }
         }
     }
 
