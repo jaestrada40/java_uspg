@@ -7,15 +7,17 @@ public class Persona {
     /* Atributos */
     private String nombre;
     private String apellido;
-    private float dpi;
-    private float nit;
+    private int dpi;
+    private int nit;
+
+    Scanner entrada = new Scanner(System.in);
     
     /* Constructor */
-    public Persona(String nombre, String apellido, float dpi2, float nit2) {
+    public Persona(String nombre, String apellido, int dpi, int nit) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dpi = dpi2;
-        this.nit = nit2;
+        this.dpi = dpi;
+        this.nit = nit;
     }
 
     /* Getters and Setters */
@@ -35,41 +37,45 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public float getDpi() {
+    public int getDpi() {
         return dpi;
     }
 
-    public void setDpi(float dpi) {
+    public void setDpi(int dpi) {
         this.dpi = dpi;
     }
 
-    public float getNit() {
+    public int getNit() {
         return nit;
     }
 
-    public void setNit(float nit) {
+    public void setNit(int nit) {
         this.nit = nit;
     }
 
     public void ingreseDatos(){
-        Scanner entrada = new Scanner(System.in);
+
         Persona personas[] = new Persona[2];
-        for (int i = 0; i < personas.length; i++){
-            System.out.println("Ingrese nombre: ");
+
+        for (int i = 0; i < 2; i++ ){
+
+            System.out.println("Ingresar nombre: ");
             nombre = entrada.nextLine();
             System.out.println("Ingrese apellido: ");
             apellido = entrada.nextLine();
             System.out.println("Ingrese DPI: ");
-            dpi = entrada.nextFloat();
-            System.out.print("Ingrese NIT: ");
-            nit = entrada.nextFloat();
+            dpi = entrada.nextInt();
+            System.out.println("Ingrese NIT: ");
+            nit = entrada.nextInt();
             personas[i] = new Persona(nombre, apellido, dpi, nit);
-            System.out.println(personas);
+
+        }
+        for (int i = 0; i < personas.length; i++){
+            personas[i].imprimirDatos();
         }
     }
 
     public void imprimirDatos(){
-        System.out.println("==================== LISTADO =========================");
-        System.out.println("Su nombre es: " + nombre + " " + apellido + " su DPI es " + apellido + " su NIT es " + nit);
+        System.out.println("Su nombre es: " + nombre + " " + apellido + " su DPI es " + dpi + " su NIT es " + nit);
     }
 }
