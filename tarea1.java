@@ -67,7 +67,7 @@ public class tarea1 {
         }
     }
 
-     public static int[] arregloAscendente(int[] arreglo){
+    public static int[] arregloAscendente(int[] arreglo){
         System.out.println("==== Arreglo Ascendente ====");
         for (int i = 0; i < arreglo.length; i++) {
             for (int j = i + 1; j < arreglo.length; j++) {
