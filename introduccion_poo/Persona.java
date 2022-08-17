@@ -13,7 +13,7 @@ public class Persona {
     Scanner entrada = new Scanner(System.in);
     
     /* Constructor */
-    public Persona(String nombre, String apellido, int dpi, int nit) {
+    public Persona(String nombre, String apellido, float dpi2, float nit2) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dpi = dpi;

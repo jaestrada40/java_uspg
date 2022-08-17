@@ -8,8 +8,8 @@ public class main {
 
         String nombre = "";
         String apellido ="";
-        int dpi = 0;
-        int nit = 0;
+        float dpi = 0;
+        float nit = 0;
         Persona personas = new Persona(nombre, apellido, dpi, nit);
 
         Scanner scanner = new Scanner(System.in);
