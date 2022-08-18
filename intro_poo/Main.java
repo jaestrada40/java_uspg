@@ -12,8 +12,7 @@ public class Main {
         int opcion = 0;
         String op = "";
         Persona personas = new Persona();
-        
-        
+
         do{
             op=JOptionPane.showInputDialog("1. Ingresar datos de personas\n2. Mostrar datos de personas\n3. Salir");
             opcion = Integer.parseInt(op);
@@ -23,6 +22,7 @@ public class Main {
                     break;
                 case 2:
                     /* imprimir */
+                    Persona.mostrarDatos();
                     break;
                 case 3:
                     System.exit(0);
@@ -30,9 +30,8 @@ public class Main {
                 default:
                     JOptionPane.showMessageDialog(null, "Opcion no valida");
                     break;
-            }  
+            }
         }while(opcion!=3);
 
     }
-  
 }

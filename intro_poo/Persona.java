@@ -27,7 +27,7 @@ public class Persona {
     public String getNombre() {
         return nombre;
     }
-    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -55,7 +55,7 @@ public class Persona {
     public void setNit(String nit) {
         this.nit = nit;
     }
-    
+
     /* Método Intresar Datos */
     public static Persona[] ingresarDatos() {
         Persona personas[] = new Persona[2];
@@ -76,6 +76,4 @@ public class Persona {
                     + personas[i].getApellidos() + " DPI: " + personas[i].getDpi() + " NIT: " + personas[i].getNit());
         }
     }
-
-    
 }
