@@ -22,6 +22,7 @@ public class Main {
                     break;
                 case 2:
                     //Persona ops = new Persona();
+                    System.out.println();
                     break;
                 case 3:
                     System.exit(0);

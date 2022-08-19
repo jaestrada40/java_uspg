@@ -62,15 +62,9 @@ public class Persona {
                 String dpi = JOptionPane.showInputDialog("Ingrese el dpi: ");
                 String nit = JOptionPane.showInputDialog("Ingrese el nit: ");
                 personas[i] = new Persona(nombre, apellidos, dpi, nit);
-                System.out.println(personas);
+                System.out.println(personas[i]);
         }
         return personas;
-    }
-
-    public static void imprimirArreglo(int[] personas) {
-        for (int i = 0; i < personas.length; i++) {
-            System.out.println(personas[i]);
-        }
     }
 
     /* Método Imprimir */
