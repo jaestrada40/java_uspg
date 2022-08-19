@@ -6,10 +6,10 @@ import javax.swing.JOptionPane;
 
 public class Persona {
     /* Atributos */
-    private String nombre;
-    private String apellidos;
-    private String dpi;
-    private String nit;
+    public String nombre;
+    public String apellidos;
+    public String dpi;
+    public String nit;
 
 
     /* Constructor */
@@ -58,19 +58,20 @@ public class Persona {
 
     /* Método Intresar Datos */
     public static Persona[] ingresarDatos() {
-        Persona personas[] = new Persona[2];
+        Persona personas[] = new Persona[10];
         for (int i = 0; i < personas.length; i++) {
-            String nombre = JOptionPane.showInputDialog("Ingrese el nombre: ");
-            String apellidos = JOptionPane.showInputDialog("Ingrese los apellidos: ");
-            String dpi = JOptionPane.showInputDialog("Ingrese el dpi: ");
-            String nit = JOptionPane.showInputDialog("Ingrese el nit: ");
-            personas[i] = new Persona(nombre, apellidos, dpi, nit);
+                String nombre = JOptionPane.showInputDialog("Ingrese el nombre: ");
+                String apellidos = JOptionPane.showInputDialog("Ingrese los apellidos: ");
+                String dpi = JOptionPane.showInputDialog("Ingrese el dpi: ");
+                String nit = JOptionPane.showInputDialog("Ingrese el nit: ");
+                personas[i] = new Persona(nombre, apellidos, dpi, nit);
         }
         return personas;
     }
+    
 
     /* Método Imprimir */
-    public  void mostrarDatos(Persona[] personas) {
+    public static void mostrarDatos(Persona[] personas) {
         for (int i = 0; i < personas.length; i++) {
             JOptionPane.showMessageDialog(null, "Nombre: " + personas[i].getNombre() + " Apellidos: "
                     + personas[i].getApellidos() + " DPI: " + personas[i].getDpi() + " NIT: " + personas[i].getNit());

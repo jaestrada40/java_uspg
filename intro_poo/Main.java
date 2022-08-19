@@ -22,7 +22,7 @@ public class Main {
                     break;
                 case 2:
                     /* imprimir */
-                    Persona.mostrarDatos();
+                    
                     break;
                 case 3:
                     System.exit(0);
@@ -34,4 +34,5 @@ public class Main {
         }while(opcion!=3);
 
     }
+
 }
