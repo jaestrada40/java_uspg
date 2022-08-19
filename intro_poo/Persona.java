@@ -69,6 +69,10 @@ public class Persona {
         return personas;
     }
     
+    /* Método imprimir personas */
+    public static void imprimir(){
+        System.out.println();
+    }
 
     /* Método Imprimir */
     public static void mostrarDatos(Persona[] personas) {
