@@ -55,15 +55,22 @@ public class Persona {
 
     /* Método Ingresar Datos */
     public static Persona[] ingresarDatos() {
-        Persona personas[] = new Persona[10];
+        Persona personas[] = new Persona[1];
         for (int i = 0; i < personas.length; i++) {
                 String nombre = JOptionPane.showInputDialog("Ingrese el nombre: ");
                 String apellidos = JOptionPane.showInputDialog("Ingrese los apellidos: ");
                 String dpi = JOptionPane.showInputDialog("Ingrese el dpi: ");
                 String nit = JOptionPane.showInputDialog("Ingrese el nit: ");
                 personas[i] = new Persona(nombre, apellidos, dpi, nit);
+                System.out.println(personas);
         }
         return personas;
+    }
+
+    public static void imprimirArreglo(int[] personas) {
+        for (int i = 0; i < personas.length; i++) {
+            System.out.println(personas[i]);
+        }
     }
 
     /* Método Imprimir */
