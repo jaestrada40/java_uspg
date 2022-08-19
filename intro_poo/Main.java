@@ -3,6 +3,7 @@ package intro_poo;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
+import intro_poo.Persona;
 
 public class Main {
 
@@ -11,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         int opcion = 0;
         String op = "";
-        Persona personas = new Persona();
+
 
         do{
             op=JOptionPane.showInputDialog("1. Ingresar datos de personas\n2. Mostrar datos de personas\n3. Salir");
@@ -22,7 +23,6 @@ public class Main {
                     break;
                 case 2:
                     /* imprimir */
-                    
                     break;
                 case 3:
                     System.exit(0);

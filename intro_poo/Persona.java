@@ -20,9 +20,6 @@ public class Persona {
         this.nit = nit;
     }
 
-    public Persona() {
-    }
-
     /* getter and setter */
     public String getNombre() {
         return nombre;
@@ -56,7 +53,7 @@ public class Persona {
         this.nit = nit;
     }
 
-    /* Método Intresar Datos */
+    /* Método Ingresar Datos */
     public static Persona[] ingresarDatos() {
         Persona personas[] = new Persona[10];
         for (int i = 0; i < personas.length; i++) {
@@ -67,11 +64,6 @@ public class Persona {
                 personas[i] = new Persona(nombre, apellidos, dpi, nit);
         }
         return personas;
-    }
-    
-    /* Método imprimir personas */
-    public static void imprimir(){
-        System.out.println();
     }
 
     /* Método Imprimir */
