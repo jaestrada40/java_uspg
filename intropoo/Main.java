@@ -1,4 +1,4 @@
-package intro_poo;
+package intropoo;
 
 import java.util.Scanner;
 

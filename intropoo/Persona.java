@@ -1,4 +1,4 @@
-package intro_poo;
+package intropoo;
 
 import javax.swing.JOptionPane;
 
@@ -56,16 +56,20 @@ public class Persona {
     public static int contador = 0;
 
     public static void ingresarDatos(){
-        for (int i = 0; i < personas.length; i++) {
-            String nombre = JOptionPane.showInputDialog("Ingrese el nombre de la persona");
-            String apellidos = JOptionPane.showInputDialog("Ingrese los apellidos de la persona");
-            String dpi = JOptionPane.showInputDialog("Ingrese el dpi de la persona");
-            String nit = JOptionPane.showInputDialog("Ingrese el nit de la persona");
+        //while desea continuar ingresando datos de 10 personas
+        while(contador < 10){
+            String nombre = JOptionPane.showInputDialog("Ingrese el nombre");
+            String apellidos = JOptionPane.showInputDialog("Ingrese los apellidos");
+            String dpi = JOptionPane.showInputDialog("Ingrese el dpi");
+            String nit = JOptionPane.showInputDialog("Ingrese el nit");
             Persona persona = new Persona(nombre, apellidos, dpi, nit);
-            personas[i] = persona;
+            personas[contador] = persona;
             contador++;
+            int opcion = JOptionPane.showConfirmDialog(null, "Desea continuar ingresando datos?");
+            if(opcion == 1){
+                break;
+            }
         }
-        
     }
 
     public static void mostrarDatos(){
@@ -73,9 +77,4 @@ public class Persona {
             JOptionPane.showMessageDialog(null, "Nombre: "+personas[i].getNombre()+"\nApellidos: "+personas[i].getApellidos()+"\nDPI: "+personas[i].getDpi()+"\nNIT: "+personas[i].getNit());
         }
     }
-
-    
-    
-
 }
-
