@@ -13,6 +13,12 @@ public class Alumno extends Persona{
         super(nombre, apellidos, dpi, nit);
     }
 
+    public Alumno(String nombre, String apellidos, String dpi, String nit, String carnet, String email) {
+        super(nombre, apellidos, dpi, nit);
+        this.carnet = carnet;
+        this.email = email;
+    }
+
     //getter and setter
     public String getCarnet() {
         return carnet;

@@ -7,7 +7,7 @@ import poo.models.*;
 public class Main {
 
     public static void main(String[] args) {
-        
+
         int opcion = 0;
         String op = "";
         do{
@@ -44,4 +44,4 @@ public class Main {
     }
 }
 
-    
+

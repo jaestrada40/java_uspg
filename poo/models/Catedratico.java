@@ -13,6 +13,12 @@ public class Catedratico extends Persona {
         super(nombre, apellidos, dpi, nit);
     }
 
+    public Catedratico(String nombre, String apellidos, String dpi, String nit, String codigo, String email) {
+        super(nombre, apellidos, dpi, nit);
+        this.codigo = codigo;
+        this.email = email;
+    }
+
     //getter and setter
     public String getCodigo() {
         return codigo;
